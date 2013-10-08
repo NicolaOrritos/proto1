@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1= title
+    p Add the URL of the resource to be monitored:
+        input#addURL(type= 'url', autocomplete= 'on', autofocus= 'true')
+        a#addBtn.button(href= '#') Add
+        
+    script(type= 'text/javascript', src= 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(type= 'text/javascript').
+        
+        $("#addBtn").click(function()
+        {
+            var url = $("#addURL").val();
+            
+            console.log("Adding the following URL to the goods: '%s'...", url);
+            
+            if (url)
+            {
+                jQuery.post("new", {
+                    url: url
+                });
+            }
+        });

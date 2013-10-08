@@ -1,0 +1,23 @@
+doctype 5
+html(lang= "en")
+    head
+        meta(charset= "utf-8")
+        title= "Vigilant - " + title
+        link(rel= "stylesheet", href= "/stylesheets/style.css")
+    body
+        header
+            nav
+                block menu
+                    if title == "Home"
+                        p.intro Goods
+                    else
+                        a.button(href= "/", class= "menu-item") Home
+                    a.button(href= "/goods/", class= "menu-item") List
+                    a.button(href= "/goods/add", class= "menu-item") New
+        
+        #content
+            block content
+        
+        footer
+            block footer
+                p Vigilant is up and running
